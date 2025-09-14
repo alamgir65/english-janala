@@ -90,7 +90,7 @@ const showWords = (words) => {
 
                 <div class="flex justify-between ">
                     <button onclick="loadWordDetails(${word.id})" class="btn bg-sky-100 p-2 hover:bg-gray-500 rounded-sm"><i class="fa-solid fa-circle-info"></i></button>
-                    <button class="btn bg-sky-100 p-2 hover:bg-gray-500 rounded-sm"><i class="fa-solid fa-volume-high"></i></button>
+                    <button onclick="pronounceWord('${word.word}')" class="btn bg-sky-100 p-2 hover:bg-gray-500 rounded-sm"><i class="fa-solid fa-volume-high"></i></button>
                 </div>
         `;
 
@@ -161,3 +161,12 @@ document.getElementById('search-btn').addEventListener('click', () => {
             showWords(matchedWords);
         })
 })
+
+
+
+// FOr listen 
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
