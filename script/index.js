@@ -23,7 +23,7 @@ const showLevels = (levels) => {
 
             fetch(`https://openapi.programming-hero.com/api/level/${level.level_no}`)
                 .then(res => res.json())
-                .then(json => showWords(json));
+                .then(json => showWords(json.data));
 
 
             // Active level button 
@@ -48,10 +48,9 @@ const showLevels = (levels) => {
 
 
 
-const showWords = (json) => {
+const showWords = (words) => {
     // console.log(json.data);
     // manageSpinner(true);
-    const words = json.data;
 
 
     const wordContainer = document.getElementById('word-container');
@@ -76,8 +75,8 @@ const showWords = (json) => {
     wordContainer.classList.add('grid', 'grid-cols-1', 'md:grid-cols-3', 'gap-5');
 
 
-    for (const word of json.data) {
-        console.log(word)
+    for (const word of words) {
+        // console.log(word)
 
         const div = document.createElement('div');
         div.classList.add('bg-white', 'px-5', 'py-7', 'rounded-lg');
@@ -144,3 +143,21 @@ const showModal = (word) => {
 
     document.getElementById('detail_modal').showModal();
 }
+
+
+
+// Search Functionality
+
+document.getElementById('search-btn').addEventListener('click', () => {
+    const searchInput = document.getElementById('search-input');
+    const searchText = searchInput.value.trim().toLowerCase();
+
+    fetch('https://openapi.programming-hero.com/api/words/all')
+        .then(res => res.json())
+        .then(json => {
+            const allWords = json.data;
+            const matchedWords = allWords.filter(word => word.word && word.word.toLowerCase().includes(searchText));
+            // console.log(matchedWords);
+            showWords(matchedWords);
+        })
+})
