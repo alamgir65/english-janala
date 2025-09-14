@@ -104,65 +104,34 @@
             <div class="space-x-2 space-y-2" id="level-container">
             </div>
         </div>
-        <div class="bg-gray-100 text-center py-10 px-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-5" id="word-container">
-            <!-- <p class="text-[10px] mb-4">আপনি এখনো কোন Lesson Select করেন ন</p>
-            <h3 class="text-2xl font-normal">একটি Lesson Select করুন।</h3> -->
+        <div class="flex justify-center items-center p-10 hidden" id="sppiner">
+            <span class="loading loading-dots loading-lg"></span>
+        </div>
+        <div class="bg-gray-100 text-center py-10 px-4 rounded-lg " id="word-container">
+            <p class="text-[10px] text-center mb-4">আপনি এখনো কোন Lesson Select করেন নি।</p>
+            <h3 class="text-2xl font-normal">একটি Lesson Select করুন।</h3>
 
-
-            <div class="bg-white px-5 py-7 rounded-lg">
-                <div class="text-center space-y-3 mb-5">
-                    <h2 class="text-xl font-semibold">Eager</h2>
-                    <p class="text-lg ">Meaning/Pronounciation</p>
-                    <h5 class="font-bangla text-xl font-semibold opacity-80">"আগ্রহী / ইগার"</h5>
-                </div>
-
-                <div class="flex justify-between ">
-                    <div class="bg-sky-100 p-1 rounded-sm"><i class="fa-solid fa-circle-info"></i></div>
-                    <div class="bg-sky-100 p-1 rounded-sm"><i class="fa-solid fa-volume-high"></i></div>
-                </div>
-            </div>
-            
-            <div class="bg-white p-2">
-                <div class="text-center space-y-3">
-                    <h2 class="text-xl font-semibold">Eager</h2>
-                    <p class="text-lg ">Meaning/Pronounciation</p>
-                    <h5 class="font-bangla text-xl font-semibold opacity-80">"আগ্রহী / ইগার"</h5>
-                </div>
-
-                <div class="flex justify-between ">
-                    <div class="bg-sky-100 p-1 rounded-sm"><i class="fa-solid fa-circle-info"></i></div>
-                    <div class="bg-sky-100 p-1 rounded-sm"><i class="fa-solid fa-volume-high"></i></div>
-                </div>
-            </div>
-            <div class="bg-white p-2">
-                <div class="text-center space-y-3">
-                    <h2 class="text-xl font-semibold">Eager</h2>
-                    <p class="text-lg ">Meaning/Pronounciation</p>
-                    <h5 class="font-bangla text-xl font-semibold opacity-80">"আগ্রহী / ইগার"</h5>
-                </div>
-
-                <div class="flex justify-between ">
-                    <div class="bg-sky-100 p-1 rounded-sm"><i class="fa-solid fa-circle-info"></i></div>
-                    <div class="bg-sky-100 p-1 rounded-sm"><i class="fa-solid fa-volume-high"></i></div>
-                </div>
-            </div>
-            <div class="bg-white p-2">
-                <div class="text-center space-y-3">
-                    <h2 class="text-xl font-semibold">Eager</h2>
-                    <p class="text-lg ">Meaning/Pronounciation</p>
-                    <h5 class="font-bangla text-xl font-semibold opacity-80">"আগ্রহী / ইগার"</h5>
-                </div>
-
-                <div class="flex justify-between ">
-                    <div class="bg-sky-100 p-1 rounded-sm"><i class="fa-solid fa-circle-info"></i></div>
-                    <div class="bg-sky-100 p-1 rounded-sm"><i class="fa-solid fa-volume-high"></i></div>
-                </div>
-            </div>
         </div>
     </section>
 
 
 
+    <!-- Modal  -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="detail_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="modal-box">
+                
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn btn-primary">Complete Learning</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
 
 
 
